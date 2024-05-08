@@ -5,7 +5,9 @@ export const GifExpertApp = () => {
   const [categories, setCategories] = useState(["One Punch", "Samurai X", "Dragon Ball"]);
 
   const onAddCategory = (NewCategory) => {
-    console.log(NewCategory);
+    
+    if (categories.includes(NewCategory)) return; // No repetir categorias
+    
     setCategories([NewCategory, ...categories]);
   };
 
