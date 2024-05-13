@@ -7,6 +7,15 @@ export const AddCategory = ({ onNewCategory }) => {
     setInputValue(target.value);
   };
 
+  const onHangleSubmit = (event) => {
+    event.preventDefault();
+    if (inputValue.trim().length <= 1) return;
+
+    onNewCategory(inputValue.trim());
+
+    setInputValue("");
+  };
+
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (inputValue.trim().length <= 1) return;
